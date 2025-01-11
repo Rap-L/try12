@@ -1,6 +1,6 @@
 from graphics import circle
 from graphics import rectangle
-from graphics.3dgraphics import *
+from graphics.subgraphics import *
 
 r=int(input("Enter the radius of circle: "))
 circle.carea(r)
