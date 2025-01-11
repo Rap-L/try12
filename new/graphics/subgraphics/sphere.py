@@ -3,4 +3,3 @@ def sarea(r):
 
 def svol(r):
     print("The volume of sphere is: ",4/3*3.14*r*r*r)
-
