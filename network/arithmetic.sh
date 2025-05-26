@@ -33,3 +33,15 @@ fi
 echo "Invalid choice"
 ;;
 esac
+
+#$ ./arthim.sh
+#Simple Calculator
+#Select an operation:
+#1. Addition
+#2. Subtraction
+#3. Multiplication
+#4. Division
+#Enter your choice (1/2/3/4): 1
+#Enter the first number: 2
+#Enter the second number: 3
+#Result: 2 + 3 = 5
