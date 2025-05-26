@@ -23,3 +23,10 @@ echo “$FILE is another type of file”
 fi
 
 ls -l $FILE
+
+
+##@Rap-L ➜ /workspaces/try12 (s2) $ ./arthim.sh
+#“Enter the file path”
+#/workspaces/try12/arthim.sh
+#“/workspaces/try12/arthim.sh is another type of file”
+#-rwxrwxrwx 1 codespace root 248 May 26 13:52 /workspaces/try12/arthim.sh
