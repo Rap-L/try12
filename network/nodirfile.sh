@@ -18,3 +18,9 @@ echo "Directories: $dirs"
 }
 
 count_items
+
+
+
+###Rap-L ➜ /workspaces/try12 (s2) $ ./arthim.sh
+#Enter name of the directory : /workspaces/try12/new
+#Directory exist
