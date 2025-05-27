@@ -1,0 +1,78 @@
+You're doing a great job exploring Bash scripting! Now, let’s answer your core question:
+
+---
+
+### ✅ **List of Operators Used and Shell Built-ins in Your Scripts**
+
+#### 🔹 **Used Operators (in all discussed Bash scripts):**
+
+| Operator/Keyword | Purpose                                                                     |                                                        |
+| ---------------- | --------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `=`              | Assignment of values to variables (e.g., `Threshold=80`)                    |                                                        |
+| `$()`            | Command substitution (e.g., \`Usage=\$(df /                                 | ...)\`)                                                |
+| `$(...)`         | Same as above — runs a command and stores its output                        |                                                        |
+| \`               | \`                                                                          | Pipe — sends output of one command as input to another |
+| `[` `]`          | Test — used in `if` conditions (e.g., `[ "$Usage" -gt "$Threshold" ]`)      |                                                        |
+| `-gt`            | Numeric comparison: greater than                                            |                                                        |
+| `-d`             | Directory test: checks if a path is a directory                             |                                                        |
+| `;`              | Statement separator (e.g., `then; echo ...`)                                |                                                        |
+| `@`              | Expands all elements of an array (e.g., `${numbers[@]}`)                    |                                                        |
+| `"`              | Double quotes — preserve spaces and prevent word splitting                  |                                                        |
+| `'`              | Single quotes — literal strings                                             |                                                        |
+| `#`              | Comment                                                                     |                                                        |
+| `{}`             | Grouping or variable expansion boundaries (e.g., `${Usage}`)                |                                                        |
+| `\n`             | Newline in `printf`                                                         |                                                        |
+| `\`              | Escape character (e.g., when quoting values or handling special characters) |                                                        |
+
+---
+
+#### 🔹 **Shell Built-ins Used**
+
+| Built-in Command                     | Purpose                                             |
+| ------------------------------------ | --------------------------------------------------- |
+| `echo`                               | Prints text to the terminal                         |
+| `read`                               | Reads input from the user (e.g., `read -a numbers`) |
+| `if`, `then`, `else`, `fi`           | Conditional control flow                            |
+| `[` (aka `test`)                     | Evaluates conditions inside `if` statements         |
+| `declare` (indirectly via `read -a`) | Declares arrays                                     |
+| `printf`                             | Formats and prints output (like C’s printf)         |
+
+---
+
+#### 🔹 **External Commands Used (not built-ins)**
+
+| Command | Purpose                                                                     |           |
+| ------- | --------------------------------------------------------------------------- | --------- |
+| `df`    | Shows disk space usage                                                      |           |
+| `awk`   | Extracts specific fields from text                                          |           |
+| `sed`   | Stream editing, e.g., removing `%`                                          |           |
+| `sort`  | Sorts lines of text                                                         |           |
+| `find`  | Searches for files in directories                                           |           |
+| `grep`  | Searches for matching patterns in text (although unnecessary in your \`df / | grep /\`) |
+
+---
+
+### ✅ Example from Disk Script
+
+```bash
+Usage=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
+if [ "$Usage" -gt "$Threshold" ]; then
+    echo "Warning: Disk usage is at ${Usage}%!"
+fi
+```
+
+**Operators Used**:
+
+* `=`, `$()`, `|`, `-gt`, `[]`, `${}`
+
+**Built-ins**:
+
+* `if`, `echo`, `[` `]`
+
+**External Commands**:
+
+* `df`, `awk`, `sed`
+
+---
+
+Let me know if you'd like a printable cheat sheet of Bash operators and built-ins, or a quiz to test your understanding!
