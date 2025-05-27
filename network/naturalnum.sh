@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "Enter the number N:"
 read N
+if (( N <= 0 )); then
+  echo "Error: N must be a positive natural number (greater than 0)."
+  exit 1 # Exit with an error code
+fi
 sum=0
 i=1
 
@@ -10,6 +14,10 @@ do
     i=$((i+1))
 done
 echo "sum:$sum"
+
+
+
+
 
 
 #output
