@@ -2,15 +2,17 @@
 //Define a class ‘product’ with data members pcode, pname and price. Create 3 objects of the class and find the product having the lowest price.
 
 class Product{
-int code;
-String name;
+int pcode;
+String pname;
 int price;
+  //constructor
 Product(int c,String n,int p)
 {
 code=c;
 name=n;
 price=p;
 }
+  //method
 void display()
 {
 System.out.println(code+" "+name+" "+price);
@@ -24,7 +26,7 @@ p1.display();
 p2.display();
 p3.display();
 
-
+System.out.println("The lowest price for product:")
 if(p1.price<p2.price && p1.price<p3.price)
 {
 System.out.println("Product is:"+p1.name);
