@@ -1,23 +1,65 @@
+ALTER
+--------------------------------------------------------------------------------------------------------------
 alter table Employee add primary key(empno);
 Alter table Department drop column location;
 alter table Employee add designation varchar(15);
 alter table student modify column phone_no varchar(15);
 alter table Instructor add foreign key (department) references Department(department_name);
 
-
+---------------------------------------------------------------------------------------------------------------
+SELECT
+---------------------------------------------------------------------------------------------------------------
 select emp_name from Emp where emp_name like "K%";
 select emp_no,emp_name from Emp where salary between 50000 and 70000;
 SELECT DISTINCT designation FROM Emp;
 SELECT emp_no, emp_name, salary FROM Emp WHERE designation IN ('Peon', 'Clerk');
 SELECT designation, COUNT(*) AS employee_count FROM Emp GROUP BY designation;
 SELECT designation FROM Emp GROUP BY designation ORDER BY COUNT(*) DESC LIMIT 1;
+select avg(price) as avg_price from Book;
+select avg(price) as avg_price from Book where category='TextBook';
+select max(price) as max_price from Book where category='Novel';
+select count(*) from Book; // tuple no
+
+select count(distinct category) from Book;
++--------------------------+
+| count(distinct category) |
++--------------------------+
+|                        3 |
++--------------------------+
+ select sum(price) as sum from Book;
++------+
+| sum  |
++------+
+| 2870 |
++------+
+1 row in set (0.00 sec)
+
+select avg(price) as avg_price from Book where category in ('Novel','Poem');
+
+######inner join ############
+select c.booktitle, p.pname from category c join publisher p on c.pid=p.pid;
+select c.author_name, p.country from category c join publisher p on c.pid=p.pid where country='India' and c.price<500;
++--------------+---------+
+| author_name  | country |
++--------------+---------+
+| Priya Sharma | India   |
++--------------+---------+
+1 row in set (0.00 sec)
+##########left join###########
+ select c.booktitle, p.pname,c.category,c.price  from category c left join publisher p on c
+.pid=p.pid;
 
 
-
-
+------------------------------------------------------------------------------------------------------------
+UPDATE
+------------------------------------------------------------------------------------------------------------
 UPDATE Emp SET salary = 40000 WHERE designation = 'Manager';
 
 
+
+-----------------------------------------------------------------------------------------------------------
+DELETE
+------------------------------------------------------------------------------------------------------------
 DELETE FROM Emp WHERE salary = 80000;
 
 
