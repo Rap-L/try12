@@ -1,1 +1,23 @@
+alter table Employee add primary key(empno);
+Alter table Department drop column location;
+alter table Employee add designation varchar(15);
+alter table student modify column phone_no varchar(15);
+alter table Instructor add foreign key (department) references Department(department_name);
+
+
+select emp_name from Emp where emp_name like "K%";
+select emp_no,emp_name from Emp where salary between 50000 and 70000;
+SELECT DISTINCT designation FROM Emp;
+SELECT emp_no, emp_name, salary FROM Emp WHERE designation IN ('Peon', 'Clerk');
+SELECT designation, COUNT(*) AS employee_count FROM Emp GROUP BY designation;
+SELECT designation FROM Emp GROUP BY designation ORDER BY COUNT(*) DESC LIMIT 1;
+
+
+
+
+UPDATE Emp SET salary = 40000 WHERE designation = 'Manager';
+
+
+DELETE FROM Emp WHERE salary = 80000;
+
 
