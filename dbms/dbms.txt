@@ -49,7 +49,7 @@ select c.author_name, p.country from category c join publisher p on c.pid=p.pid 
  select c.booktitle, p.pname,c.category,c.price  from category c left join publisher p on c
 .pid=p.pid;
 
-
+start from 9
 ------------------------------------------------------------------------------------------------------------
 UPDATE
 ------------------------------------------------------------------------------------------------------------
