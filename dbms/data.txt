@@ -1,0 +1,62 @@
+
+sudo apt-get update
+sudo apt-get install mysql-server -y
+sudo service mysql start
+sudo mysql -u root
+
+k 500000 700000 desg dupli
+john
+80000
+n
+poen and clerk
+');
+
+Create table Employee(empno int, emp_name varchar(20),mobile_no varchar(13),salary float(7),designation varchar(15));
+
+Insert into Employee (empno, emp_name,mobile_no,salary, designation) 
+values (500, 'John Doe', '1234567890', 70000, 'Manager'),
+(507, 'Nikil', '1234567896', 60000, 'Manager'),
+(508, 'Kiyara', '1234567899', 55000, 'clerk'),
+(501, 'Jane Smith', '0987654321', 80000, 'Developer'),
+(502, 'Alice Johnson', '1122334455', 75000, 'peon'),
+(503, 'Bob Brown', '2233445566', 60000, 'Developer');
+
+
+
+create table Book(isbn int(5) primary key,title varchar(50),author  varchar(20),category varchar(20),price int(10),year int(5));
+ insert into Book values(24680,"Chemmeen","Thakazhi","Novel",350,1956),
+     (35421,"Kayar","Thakazhi","Novel",420,1978),
+    (98460,"Veenapoovu","ONV Kurup","Poem",200,2010),
+    (64532,"Bhoomigeethangal ","ONV  Kurup","poem",250,1997),
+    (55669,"Introduction to Psychology","James  Kalat","TextBook",750,2012),
+    (77825,"Principles of Microeconomics ","Gregory  Mankiw","TextBook",900,2014);
+
+
+CREATE TABLE category (
+     ISBN VARCHAR(20) PRIMARY KEY,
+     booktitle VARCHAR(255) NOT NULL,
+     author_name VARCHAR(100) NOT NULL,
+     category VARCHAR(50),
+     price DECIMAL(10, 2),
+      pid INT);
+
+
+CREATE TABLE publisher 
+(pid INT PRIMARY KEY,
+ pname VARCHAR(100) NOT NULL,
+ country VARCHAR(50));
+
+
+INSERT INTO publisher (pid, pname, country) VALUES
+ (101, 'Alpha Books', 'USA'),
+ (102, 'Beta Publications', 'India'),
+  (103, 'Gamma House', 'UK'),
+  (104, 'Delta Press', 'India'),
+   (105, 'Epsilon Books', 'Canada');
+
+INSERT INTO category (ISBN, booktitle, author_name, category, price, pid) VALUES
+    ('978-1234567890', 'The Great Adventure', 'John Smith', 'Fiction', 250.50, 101),
+    ('978-0987654321', 'Science Made Easy', 'Priya Sharma', 'Science', 499.99, 102),
+    ('978-1122334455', 'Mystery of the Old Manor', 'David Williams', 'Fiction', 325.00, 103),
+    ('978-5566778899', 'Indian Cooking Secrets', 'Anita Patel', 'Cookbook', 550.75, 102),
+    ('978-9988776655', 'Cosmic Wonders', 'Robert Jones', 'Science', 199.00, 105);
